@@ -48,7 +48,11 @@ var app = {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+    alert(notification);
+}, function(error) {
+    alert(error);
+});
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
