@@ -42,20 +42,23 @@ var app = {
 }, function(error) {
     alert(error);
 });
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+    alert(notification);
+}, function(error) {
+    alert(error);
+});
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-window.FirebasePlugin.onNotificationOpen(function(notification) {
-    alert(notification);
-}, function(error) {
-    alert(error);
-});
+
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     }
+
+    
 };
